@@ -1,0 +1,75 @@
+---
+title: "Training 1 advanced R"
+author: "Stacy"
+date: "6/15/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Steps in accessing the data
+
+-Access the data
+
+```{r}
+#load packages
+library(tidyverse)
+library(readxl)
+
+#name the data
+data<-read_xlsx("AirQualityUCI.xlsx")
+
+glimpse(data)
+
+
+
+```
+
+##data types
+Integer
+
+Decimal
+
+Text data
+
+Categorical data
+
+Binary
+
+Dates
+
+library(assertive)
+library(janitor) #cleaning data
+
+```{r}
+library(janitor)
+data_clean<-janitor::clean_names(data)
+names(data)
+names(data_clean)
+
+```
+
+###Process of data
+1.Access the data
+
+2.Explore and process the data
+
+3.Extract insights
+
+4.report insights
+
+
+```{r}
+#skimr is used to compute summary
+library(skimr)
+skimr::skim(data_clean)
+
+```
+
+
+
+
